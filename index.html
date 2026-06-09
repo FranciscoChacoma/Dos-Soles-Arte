@@ -414,7 +414,7 @@
 
                 <!-- badge -->
                 <div class="hero-reveal delay-1 inline-flex items-center gap-2 badge-pill px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
-                    <span>🎵</span> Taller de Música · Carlos Paz
+                    <span>🎵</span> Taller de Música Presencial · Carlos Paz
                 </div>
 
                 <!-- headline -->
@@ -443,7 +443,7 @@
                 <!-- stats -->
                 <div class="hero-reveal delay-4 flex gap-8 mt-12 justify-center md:justify-start">
                     <div>
-                        <p class="font-display text-3xl font-black text-brand-yellow">8+</p>
+                        <p class="font-display text-3xl font-black text-brand-yellow">6+</p>
                         <p class="text-white/60 text-xs uppercase tracking-widest">Instrumentos</p>
                     </div>
                     <div class="w-px bg-white/20"></div>
@@ -510,18 +510,16 @@
                 <!-- scrollable body -->
                 <div class="letter-scroll-inner letter-body">
                     <p class="mb-5">
-                        Es de nuestro agrado darles la bienvenida a un nuevo ciclo lleno de desafíos y aprendizajes.
-                        Es para nosotros un honor contar con su presencia y confianza.
+                        Es de nuestro agrado darles la bienvenida a DOS SOLES; para nosotros es un honor contar con su 
+                        presencia y confianza. Cada nuevo ciclo es una oportunidad llena de desafíos y aprendizajes; 
+                        en él se renuevan las ganas de seguir aprendiendo y transitar juntos este camino que es la música 
+                        y el arte.
                     </p>
                     <p class="mb-5">
-                        Un año nuevo comienza y con él se renuevan las ganas de seguir aprendiendo y transitar juntos
-                        este camino que es la música y el arte.
-                    </p>
-                    <p class="mb-5">
-                        Es para nosotros muy importante que en la duración de los cursos se mantenga vivo el espíritu
-                        musical, poniendo por encima de cualquier otra cosa sus inquietudes y necesidades personales
-                        para con la materia, siempre buscando que el desarrollo de cada estudiante sea integral y que
-                        la experiencia sea parte de un complemento para crear una mirada más sensible hacia el mundo
+                        Es para nosotros muy importante que, en la duración de los cursos, se mantenga vivo el espíritu 
+                        musical, poniendo por encima de cualquier otra cosa sus inquietudes y necesidades personales 
+                        para con la materia, siempre buscando que el desarrollo de cada estudiante sea integral y que 
+                        la experiencia sea parte de un complemento para crear una mirada más sensible hacia el mundo 
                         que nos rodea.
                     </p>
                     <p class="mb-5">
@@ -845,6 +843,34 @@
          │   assets/galeria/col-07.jpg  ← H    │
          │   assets/galeria/col-08.jpg  ← V    │
          │  (V = vertical, H = horizontal)     │
+         │                                     │
+         │  CARRUSEL (15 slides):              │
+         │   assets/galeria/car-01.jpg         │
+         │   assets/galeria/car-02.jpg         │
+         │   ...hasta car-15.jpg               │
+         │  (recomendado horizontales)         │
+         │                                     │
+         │  MUESTRA 2024 (2 fotos):            │
+         │   assets/galeria/m24-a.jpg          │
+         │   assets/galeria/m24-b.jpg          │
+         │                                     │
+         │  MUESTRA 2025 (2 fotos):            │
+         │   assets/galeria/m25-a.jpg          │
+         │   assets/galeria/m25-b.jpg          │
+         │                                     │
+         │  VIDEO RECORRIDO:                   │
+         │   assets/galeria/recorrido.mp4      │
+         │   assets/galeria/recorrido-poster   │
+         │   .jpg  (opcional, imagen previa)   │
+         └─────────────────────────────────────┘
+    ═══════════════════════════════════════ 
+         │   assets/galeria/col-03.jpg  ← V    │
+         │   assets/galeria/col-04.jpg  ← H    │
+         │   assets/galeria/col-05.jpg  ← V    │
+         │   assets/galeria/col-06.jpg  ← V    │
+         │   assets/galeria/col-07.jpg  ← H    │
+         │   assets/galeria/col-08.jpg  ← V    │
+         │  (V = vertical, H = horizontal)     │
          │  Agregá/quitá items según fotos     │
          │                                     │
          │  CARRUSEL (slides):                 │
@@ -903,15 +929,15 @@
                         <img src="assets/galeria/col-02.jpg" alt="Taller Dos Soles">
                     </div>
 
+                    <div class="collage-item">
+                        <img src="assets/galeria/col-09.jpg" alt="Taller Dos Soles">
+                    </div>
+
                     <!-- ╔══════════════════════════════════╗
                          ║  FOTO COLLAGE 3 — VERTICAL      ║
                          ╚══════════════════════════════════╝ -->
                     <div class="collage-item">
                         <img src="assets/galeria/col-03.jpg" alt="Taller Dos Soles">
-                    </div>
-
-                    <div class="collage-item">
-                        <img src="assets/galeria/col-09.jpg" alt="Taller Dos Soles">
                     </div>
 
                     <!-- ╔══════════════════════════════════╗
@@ -959,130 +985,133 @@
             <div class="mb-20 max-w-4xl mx-auto"
                  x-data="{
                     current: 0,
-                    total: 6,
                     timer: null,
-                    init() {
-                        this.timer = setInterval(() => {
-                            this.current = (this.current + 1) % this.total;
-                        }, 9000);
+                    thumbStart: 0,
+                    thumbVisible: 6,
+                    slides: [
+                        'assets/galeria/car-01.jpg',
+                        'assets/galeria/car-02.jpg',
+                        'assets/galeria/car-03.jpg',
+                        'assets/galeria/car-04.jpg',
+                        'assets/galeria/car-05.jpg',
+                        'assets/galeria/car-06.jpg',
+                        'assets/galeria/car-07.jpg',
+                        'assets/galeria/car-08.jpg',
+                        'assets/galeria/car-09.jpg',
+                        'assets/galeria/car-10.jpg',
+                        'assets/galeria/car-11.jpg',
+                        'assets/galeria/car-12.jpg',
+                        'assets/galeria/car-13.jpg',
+                        'assets/galeria/car-14.jpg',
+                        'assets/galeria/car-15.jpg'
+                    ],
+                    get total() { return this.slides.length; },
+                    init() { this.startTimer(); },
+                    startTimer() {
+                        clearInterval(this.timer);
+                        this.timer = setInterval(() => { this.next(); }, 3000);
                     },
                     go(i) {
-                        clearInterval(this.timer);
                         this.current = i;
-                        this.timer = setInterval(() => {
-                            this.current = (this.current + 1) % this.total;
-                        }, 9000);
-                    }
+                        this.syncThumbs();
+                        this.startTimer();
+                    },
+                    next() {
+                        this.current = (this.current + 1) % this.total;
+                        this.syncThumbs();
+                    },
+                    prev() {
+                        this.current = (this.current - 1 + this.total) % this.total;
+                        this.syncThumbs();
+                        this.startTimer();
+                    },
+                    syncThumbs() {
+                        if (this.current < this.thumbStart) {
+                            this.thumbStart = this.current;
+                        } else if (this.current >= this.thumbStart + this.thumbVisible) {
+                            this.thumbStart = this.current - this.thumbVisible + 1;
+                        }
+                    },
+                    thumbPrev() { if (this.thumbStart > 0) this.thumbStart--; },
+                    thumbNext() { if (this.thumbStart + this.thumbVisible < this.total) this.thumbStart++; }
                  }"
                  x-init="init()">
 
                 <h3 class="font-heading text-xl text-gray-700 mb-6 text-center uppercase tracking-widest">Nuestro taller en imágenes</h3>
 
-                <!-- Main image -->
-                <div class="carousel-track rounded-[1.5rem] overflow-hidden shadow-2xl bg-gray-900"
+                <!-- Main image + flechas laterales -->
+                <div class="relative rounded-[1.5rem] overflow-hidden shadow-2xl bg-gray-900"
                      style="aspect-ratio:16/9;">
 
-                    <!-- ╔══════════════════════════════════╗
-                         ║  CARRUSEL SLIDE 1               ║
-                         ║  Recomendado: HORIZONTAL        ║
-                         ╚══════════════════════════════════╝ -->
-                    <div class="carousel-slide" :class="current === 0 ? 'active' : ''">
-                        <img src="assets/galeria/car-01.jpg" alt="Carrusel 1"
-                             class="w-full h-full object-cover">
-                    </div>
+                    <!-- Slides generados desde el array -->
+                    <template x-for="(src, idx) in slides" :key="idx">
+                        <div class="carousel-slide w-full h-full" :class="current === idx ? 'active' : ''">
+                            <img :src="src" :alt="'Carrusel ' + (idx + 1)" class="w-full h-full object-cover">
+                        </div>
+                    </template>
 
-                    <!-- ╔══════════════════════════════════╗
-                         ║  CARRUSEL SLIDE 2               ║
-                         ╚══════════════════════════════════╝ -->
-                    <div class="carousel-slide" :class="current === 1 ? 'active' : ''">
-                        <img src="assets/galeria/car-02.jpg" alt="Carrusel 2"
-                             class="w-full h-full object-cover">
-                    </div>
+                    <!-- Flecha izquierda -->
+                    <button @click="prev()"
+                            class="absolute left-3 top-1/2 -translate-y-1/2 z-20
+                                   w-10 h-10 rounded-full flex items-center justify-center
+                                   bg-black/40 hover:bg-brand-purple text-white
+                                   transition-all backdrop-blur-sm border border-white/20"
+                            aria-label="Anterior">
+                        <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                    </button>
 
-                    <!-- ╔══════════════════════════════════╗
-                         ║  CARRUSEL SLIDE 3               ║
-                         ╚══════════════════════════════════╝ -->
-                    <div class="carousel-slide" :class="current === 2 ? 'active' : ''">
-                        <img src="assets/galeria/car-03.jpg" alt="Carrusel 3"
-                             class="w-full h-full object-cover">
-                    </div>
+                    <!-- Flecha derecha -->
+                    <button @click="next(); startTimer();"
+                            class="absolute right-3 top-1/2 -translate-y-1/2 z-20
+                                   w-10 h-10 rounded-full flex items-center justify-center
+                                   bg-black/40 hover:bg-brand-purple text-white
+                                   transition-all backdrop-blur-sm border border-white/20"
+                            aria-label="Siguiente">
+                        <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                    </button>
 
-                    <!-- ╔══════════════════════════════════╗
-                         ║  CARRUSEL SLIDE 4               ║
-                         ╚══════════════════════════════════╝ -->
-                    <div class="carousel-slide" :class="current === 3 ? 'active' : ''">
-                        <img src="assets/galeria/car-04.jpg" alt="Carrusel 4"
-                             class="w-full h-full object-cover">
-                    </div>
-
-                    <!-- ╔══════════════════════════════════╗
-                         ║  CARRUSEL SLIDE 5               ║
-                         ╚══════════════════════════════════╝ -->
-                    <div class="carousel-slide" :class="current === 4 ? 'active' : ''">
-                        <img src="assets/galeria/car-05.jpg" alt="Carrusel 5"
-                             class="w-full h-full object-cover">
-                    </div>
-
-                    <!-- ╔══════════════════════════════════╗
-                         ║  CARRUSEL SLIDE 6               ║
-                         ╚══════════════════════════════════╝ -->
-                    <div class="carousel-slide" :class="current === 5 ? 'active' : ''">
-                        <img src="assets/galeria/car-06.jpg" alt="Carrusel 6"
-                             class="w-full h-full object-cover">
+                    <!-- Contador -->
+                    <div class="absolute bottom-3 right-4 z-20
+                                bg-black/50 text-white text-xs font-bold px-3 py-1 rounded-full
+                                backdrop-blur-sm">
+                        <span x-text="current + 1"></span> / <span x-text="total"></span>
                     </div>
 
                 </div>
 
-                <!-- Thumbnails / dots nav -->
-                <div class="flex gap-3 mt-4 overflow-x-auto pb-1 justify-center flex-wrap">
+                <!-- Thumbnails con flechas -->
+                <div class="flex items-center gap-2 mt-4">
 
-                    <!-- ╔══════════════════════════════════╗
-                         ║  THUMBNAIL 1 — misma imagen     ║
-                         ║  que CARRUSEL SLIDE 1           ║
-                         ╚══════════════════════════════════╝ -->
-                    <button @click="go(0)" :class="current === 0 ? 'active-thumb' : ''"
-                            class="thumb-btn w-16 h-12 md:w-20 md:h-14">
-                        <img src="assets/galeria/car-01.jpg" alt="Thumb 1" class="w-full h-full object-cover">
+                    <!-- Flecha izq thumbnails -->
+                    <button @click="thumbPrev()"
+                            :disabled="thumbStart === 0"
+                            class="w-8 h-8 rounded-full flex items-center justify-center shrink-0
+                                   bg-gray-100 hover:bg-brand-purple hover:text-white text-gray-500
+                                   disabled:opacity-30 disabled:cursor-not-allowed transition-colors">
+                        <i data-lucide="chevron-left" class="w-4 h-4"></i>
                     </button>
 
-                    <!-- ╔══════════════════════════════════╗
-                         ║  THUMBNAIL 2                    ║
-                         ╚══════════════════════════════════╝ -->
-                    <button @click="go(1)" :class="current === 1 ? 'active-thumb' : ''"
-                            class="thumb-btn w-16 h-12 md:w-20 md:h-14">
-                        <img src="assets/galeria/car-02.jpg" alt="Thumb 2" class="w-full h-full object-cover">
-                    </button>
+                    <!-- Thumbnails visibles (ventana deslizante de 6) -->
+                    <div class="flex gap-2 flex-1 overflow-hidden">
+                        <template x-for="(src, idx) in slides" :key="idx">
+                            <button
+                                x-show="idx >= thumbStart && idx < thumbStart + thumbVisible"
+                                @click="go(idx)"
+                                :class="current === idx ? 'active-thumb' : ''"
+                                class="thumb-btn flex-1 min-w-0 h-12 md:h-14">
+                                <img :src="src" :alt="'Thumb ' + (idx + 1)"
+                                     class="w-full h-full object-cover">
+                            </button>
+                        </template>
+                    </div>
 
-                    <!-- ╔══════════════════════════════════╗
-                         ║  THUMBNAIL 3                    ║
-                         ╚══════════════════════════════════╝ -->
-                    <button @click="go(2)" :class="current === 2 ? 'active-thumb' : ''"
-                            class="thumb-btn w-16 h-12 md:w-20 md:h-14">
-                        <img src="assets/galeria/car-03.jpg" alt="Thumb 3" class="w-full h-full object-cover">
-                    </button>
-
-                    <!-- ╔══════════════════════════════════╗
-                         ║  THUMBNAIL 4                    ║
-                         ╚══════════════════════════════════╝ -->
-                    <button @click="go(3)" :class="current === 3 ? 'active-thumb' : ''"
-                            class="thumb-btn w-16 h-12 md:w-20 md:h-14">
-                        <img src="assets/galeria/car-04.jpg" alt="Thumb 4" class="w-full h-full object-cover">
-                    </button>
-
-                    <!-- ╔══════════════════════════════════╗
-                         ║  THUMBNAIL 5                    ║
-                         ╚══════════════════════════════════╝ -->
-                    <button @click="go(4)" :class="current === 4 ? 'active-thumb' : ''"
-                            class="thumb-btn w-16 h-12 md:w-20 md:h-14">
-                        <img src="assets/galeria/car-05.jpg" alt="Thumb 5" class="w-full h-full object-cover">
-                    </button>
-
-                    <!-- ╔══════════════════════════════════╗
-                         ║  THUMBNAIL 6                    ║
-                         ╚══════════════════════════════════╝ -->
-                    <button @click="go(5)" :class="current === 5 ? 'active-thumb' : ''"
-                            class="thumb-btn w-16 h-12 md:w-20 md:h-14">
-                        <img src="assets/galeria/car-06.jpg" alt="Thumb 6" class="w-full h-full object-cover">
+                    <!-- Flecha der thumbnails -->
+                    <button @click="thumbNext()"
+                            :disabled="thumbStart + thumbVisible >= total"
+                            class="w-8 h-8 rounded-full flex items-center justify-center shrink-0
+                                   bg-gray-100 hover:bg-brand-purple hover:text-white text-gray-500
+                                   disabled:opacity-30 disabled:cursor-not-allowed transition-colors">
+                        <i data-lucide="chevron-right" class="w-4 h-4"></i>
                     </button>
 
                 </div>
@@ -1124,8 +1153,10 @@
                             </div>
                             <h4 class="font-display text-2xl font-bold text-gray-800 mb-2">Muestra Fin de Año 2024</h4>
                             <p class="text-gray-500 text-sm leading-relaxed">
-                                El alumnado de Dos Soles subió al escenario para demostrar todo lo aprendido durante el año. 
-                                Un momento de celebración, música y comunidad.
+                                Los estudiantes de Dos Soles subieron al 
+                                escenario para demostrar todo lo aprendido 
+                                durante el año. Un momento de celebración, 
+                                música y comunidad.
                             </p>
                         </div>
                     </div>
@@ -1157,10 +1188,73 @@
                             </div>
                             <h4 class="font-display text-2xl font-bold text-gray-800 mb-2">Muestra Fin de Año 2025</h4>
                             <p class="text-gray-500 text-sm leading-relaxed">
-                                Otro año, otro escenario. El alumnado 2025 brilló con su propio repertorio, 
-                                demostrando el crecimiento individual y colectivo del taller.
+                                Otro año, otro escenario. En 2025 los estudiantes 
+                                brillaron con su propio repertorio, demostrando el crecimiento individual y
+                                colectivo del taller.
                             </p>
                         </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- ─── BLOQUE 4: VIDEO RECORRIDO ─────────── -->
+            <div class="mt-20">
+                <h3 class="font-heading text-xl text-gray-700 mb-8 text-center uppercase tracking-widest">🎥 Conocé el taller 🎥</h3>
+
+                <div class="flex flex-col items-center gap-6 md:flex-row md:items-start md:gap-12 max-w-3xl mx-auto">
+
+                    <!-- ╔═══════════════════════════════════════╗
+                         ║  VIDEO VERTICAL — RECORRIDO          ║
+                         ║                                      ║
+                         ║  Reemplazá src con tu archivo:       ║
+                         ║  assets/galeria/recorrido.mp4        ║
+                         ║                                      ║
+                         ║  Si preferís subir a YouTube o       ║
+                         ║  Instagram y embeber, reemplazá el   ║
+                         ║  <video> por un <iframe> con el      ║
+                         ║  link de embed correspondiente.      ║
+                         ╚═══════════════════════════════════════╝ -->
+                    <div class="w-full max-w-[280px] mx-auto md:mx-0 shrink-0">
+                        <div class="rounded-[1.5rem] overflow-hidden shadow-2xl border-4 border-brand-purple/20"
+                             style="aspect-ratio: 9/16;">
+                            <video
+                                src="assets/RecorridoTaller.mp4"
+                                class="w-full h-full object-cover"
+                                controls
+                                playsinline
+                                preload="metadata"
+                                poster="assets/galeria/recorrido-poster.jpg">
+                                <!-- ╔═════════════════════════════╗
+                                     ║  POSTER (opcional):         ║
+                                     ║  recorrido-poster.jpg       ║
+                                     ║  Es la imagen que aparece   ║
+                                     ║  antes de dar play.         ║
+                                     ║  Si no tenés, borrá el      ║
+                                     ║  atributo poster=""         ║
+                                     ╚═════════════════════════════╝ -->
+                                Tu navegador no soporta video HTML5.
+                            </video>
+                        </div>
+                    </div>
+
+                    <!-- Texto al lado del video -->
+                    <div class="flex-1 text-center md:text-left pt-2">
+                        <span class="inline-block bg-brand-purple/10 text-brand-purple text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4">
+                            Recorrido virtual
+                        </span>
+                        <h4 class="font-display text-3xl font-bold text-gray-800 mb-4">
+                            Un vistazo al espacio
+                        </h4>
+                        <p class="text-gray-500 leading-relaxed mb-6">
+                            Conocé las instalaciones de Dos Soles desde adentro. Salas de ensayo, instrumentos, 
+                            materiales y todos los rincones donde la música cobra vida cada día.
+                        </p>
+                        <a href="https://wa.me/5493541553631?text=Hola! Me gustaría conocer el taller"
+                           class="inline-flex items-center gap-2 bg-brand-purple text-white px-6 py-3 rounded-xl font-bold hover:bg-brand-orange transition-colors text-sm">
+                            📍 Quiero conocerlo en persona
+                        </a>
                     </div>
 
                 </div>
